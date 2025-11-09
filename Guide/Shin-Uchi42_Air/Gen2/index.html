@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>真打42 Air (Gen2) ユーザーガイド</title>
+    <link rel="stylesheet" href="../../../style.css" />
+</head>
+
+<body>
+    <header class="hero">
+        <div class="container reveal">
+            <h1 class="t-hero">真打42 Air (Gen2)</h1>
+            <p class="t-sub">ユーザーガイド / 使い方の説明</p>
+        </div>
+    </header>
+    <section class="container reveal">
+        <div class="eyebrow">Warning</div>
+        <h2>使用上の注意</h2>
+        <div class="panel">
+            <p>液体をかけたり、高温になる場所に放置したり、強い力や衝撃を与えたりしないでください。接触不良やバッテリーの発火を起こす可能性があります。</p>
+            <p>直射日光に長期間当てないでください。高温を避ける意味でも、筐体を傷めないという意味でも。</p>
+            <p>日本国外で電源を入れないでください。違法電波になる可能性があるので。</p>
+        </div>
+    </section>
+    <section class="container reveal">
+        <div class="eyebrow">Start</div>
+        <h2>使い始める</h2>
+        <div class="panel">
+            <p>左右それぞれで、内側の側面にあるの電源スイッチを上に切り替えて電源を入れます。</p>
+            <p>PCのBluetooth設定画面で <b>"Shin_Uchi42 Air"</b> が表示されたら接続します。入力方式の指定が出た場合は <b>ANSI（US配列）</b> を選択してください。</p>
+            <p>左側が親機で、右側が子機（ZMKの初期設定）になっています。子機は親機に接続して動作し、単体では動作しません。</p>
+        </div>
+    </section>
+    <section class="container reveal" id="keymap">
+        <div class="eyebrow">Default Keymap</div>
+        <h2>デフォルトキーマップ</h2>
+        <div class="panel">
+            <p>初期状態では以下のキーマップが設定されています（購入時期によって異なる場合があります）。青字が通常入力、背景の文字は長押しで入力されます。</p>
+            <img src="../assets/keymap-layer0.svg" alt="デフォルトキーマップ" />
+            <p>大西配列を採用しています。QWERTY配列ではありませんのでご注意ください。大丈夫、使っているうちに慣れますよ。</p>
+            <p>英数キー長押しで記号数字レイヤーが、かなキー長押しで操作系レイヤーが有効になります。</p>
+        </div>
+    </section>
+    <section class="container reveal">
+        <div class="eyebrow">Charging</div>
+        <h2>充電について</h2>
+        <div class="panel">
+            <p>USB Type-Cケーブルを使用し、電源スイッチをオンにした状態で充電してください。充電中は端子横上面の穴のうち右側から見えるLEDが緑色に点灯します。</p>
+            <p>長期間使用しない場合は、必ず電源をオフにして保管してください。また、バッテリーの劣化を防ぐため、半年に一度は充電してください。</p>
+            <p>子機は通常使用において親機よりも数倍バッテリーが持つため、親機ほど頻繁に充電する必要はありません。</p>
+        </div>
+    </section>
+    <section class="container reveal">
+        <div class="eyebrow">Remap</div>
+        <h2>キーマップを書き換える</h2>
+        <div class="panel">
+            <p>キーマップは書き換え可能です。詳細な手順は以下のリポジトリを参照してください。</p>    
+            <p><a href="https://github.com/mina-root/Shin-Uchi42Air_ZMK-config" target="_blank" rel="noopener">Shin-Uchi42Air_ZMK-config</a></p>
+            <h4>リセットスイッチの位置</h4>
+            <p>USB-C端子付近の上面にある2つの穴のうち、左側の穴の奥にリセットスイッチがあります。細い棒で押してください。デフォルトキーマップだと右側のミニボタン2つの同時押しでもリセットできます。</p>
+        </div>
+    </section>
+    <section class="container reveal">
+        <div class="eyebrow">Support</div>
+        <h2>困ったときは</h2>
+        <div class="panel">
+            <p>Bluetooth接続ができない、入力が不安定などの症状が出る場合は以下を確認してください。</p>
+            <ul>
+                <li>充電切れの可能性は？ → 充電してくださいね。</li>
+                <li>他ホストに接続中かも？ → BT Selで空いているプロファイルに変更するか、BT Clear / BT Clear Allで登録されているプロファイルを削除してください。</li>
+                <li>記号が違う → PC側の入力方式が日本語配列になっているならUS配列に変更してください。あるいはキーマップ設定を確認。</li>
+                <li>キー無反応 → キーマップ設定を確認して、問題なければハード的な不良の可能性。ミナモト@mina_VRChへ連絡してくださいね。</li>
+                <li></li>
+            </ul>
+            <p>。</p>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">Designed by Minamoto © 2025 真打42 Project</div>
+    </footer>
+    <script>
+        const io = new IntersectionObserver((es) => {
+            es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(n => io.observe(n));
+    </script>
+</body>
+
+</html>
