@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../images/icons/icon_16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../images/icons/icon_32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../images/icons/icon_180.png">
+
     <title>真打42 Air (Gen2) ユーザーガイド</title>
     <link rel="stylesheet" href="../../../style.css" />
 </head>
@@ -37,10 +41,21 @@
         <div class="eyebrow">Default Keymap</div>
         <h2>デフォルトキーマップ</h2>
         <div class="panel">
-            <p>初期状態では以下のキーマップが設定されています（購入時期によって異なる場合があります）。青字が通常入力、背景の文字は長押しで入力されます。</p>
-            <img src="../assets/keymap-layer0.svg" alt="デフォルトキーマップ" />
-            <p><a href ="https://o24.works/layout/">大西配列</a>を採用しています。QWERTY配列ではありませんのでご注意ください。大丈夫、使っているうちに慣れますよ。</p>
+            <p>初期状態では以下のキーマップが設定されています（購入時期によって異なる場合があります）。中央の文字が通常入力、下部の文字は長押しで入力されます。</p>
+            <p><a href ="https://o24.works/layout/">大西配列</a>を採用しています。QWERTY配列ではありませんのでご注意ください。</p>
+            <p>キーに印字がないので、慣れないうちはキーマップを確認（画面上に表示しておくか、印刷などをしておく）しながら使うことをおすすめします。大丈夫、使っているうちに慣れますよ。</p>
             <p>英数キー長押しで記号数字レイヤーが、かなキー長押しで操作系レイヤーが有効になります。</p>
+            <p>Shiftは、どちらの手でも人差し指か中指のホームポジションのキーを長押しすることで入力されます。</p>
+            <p>ミニボタンは、左手側を左から①②、右手側を左から③④としたとき、以下の機能が割り当てられています。</p>
+            <ul>
+                <li>①：数字記号レイヤーの数字と一部記号をテンキー入力か通常の入力か切り替える</li>
+                <li>②：PCをスリープする</li>
+                <li>③：Bluetoothプロファイルを切り替えるためのBTレイヤーに切り替える</li>
+                <li>④：BTプロファイルを次の番号に切り替える（4番の次は0番に戻ります）</li>
+            </ul>
+            <img src="../../../images/keymap.svg" alt="デフォルトキーマップ" />
+            <p>TABは左手側の中央行の右2つのキーを同時押しすることで入力できます。2つのキーのちょうど間の部分を人差し指で押すのがおすすめです。</p>
+            <img src="../../../images/keymap_combo.svg" alt="コンボ入力" />
         </div>
     </section>
     <section class="container reveal">
@@ -56,7 +71,8 @@
         <div class="eyebrow">Remap</div>
         <h2>キーマップを書き換える</h2>
         <div class="panel">
-            <p>キーマップは書き換え可能です。詳細な手順は以下のリポジトリを参照してください。</p>    
+            <p>もちろん、キーマップは書き換え可能です。詳細な手順は以下のリポジトリを参照してください。</p>  
+            <p>当然、QWERTY配列にすることもできます。が、カラムスタッガードキーボードでQWERTY配列はあまり相性が良くないのでおすすめしません。大西配列以外にも、日本語・英語それぞれにQWERTYより最適化された配列があるので、自分だけの最強の配列を見つけてくださいね。</p>
             <p><a href="https://github.com/mina-root/Shin-Uchi42Air_ZMK-config">Shin-Uchi42Air_ZMK-config</a></p>
             <h4>リセットスイッチの位置</h4>
             <p>USB-C端子付近の上面にある2つの穴のうち、左側の穴の奥にリセットスイッチがあります。細い棒で押してください。デフォルトキーマップだと右側のミニボタン2つの同時押しでもリセットできます。</p>
@@ -69,11 +85,11 @@
             <p>Bluetooth接続ができない、入力が不安定などの症状が出る場合は以下を確認してください。</p>
             <ul>
                 <li>充電切れの可能性は？ → 充電してくださいね。</li>
-                <li>他ホストに接続中かも？ → BT Selで空いているプロファイルに変更するか、BT Clear / BT Clear Allで登録されているプロファイルを削除してください。</li>
-                <li>記号が違う → PC側の入力方式が日本語配列になっているならUS配列に変更してください。あるいはキーマップ設定を確認。</li>
-                <li>キー無反応 → キーマップ設定を確認して、問題なければハード的な不良の可能性。<a href="https://x.com/mina_VRCh">ミナモト@mina_VRCh</a>へ連絡してくださいね。</li>
+                <li>他ホストに接続中かも？ → BT (番号)で空いているプロファイルに変更するか、BT Clear / BT Clear Allで登録されているプロファイルを削除してください。</li>
+                <li>記号が違うよ？ → PC側の入力方式が日本語配列になっているならUS配列に変更してください。あるいはキーマップ設定を間違えているかも。</li>
+                <li>キーが無反応なんだけど？ → キーマップ設定を確認して、問題なければハード的な不良の可能性。<a href="https://x.com/mina_VRCh">ミナモト@mina_VRCh</a>へ連絡してくださいね。</li>
             </ul>
-
+            <img src="../../../images/keymap_bt.svg" alt="Bluetooth接続のキーマップ" />
         </div>
     </section>
     <footer class="footer">
