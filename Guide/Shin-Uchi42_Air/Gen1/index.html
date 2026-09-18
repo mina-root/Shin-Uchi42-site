@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../images/icons/icon_16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../images/icons/icon_32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../images/icons/icon_180.png">
+
+    <title>真打42 Air (Gen1) ユーザーガイド</title>
+    <link rel="stylesheet" href="../../../style.css" />
+</head>
+
+<body>
+    <header class="hero">
+        <div class="container reveal">
+            <h1 class="t-hero">真打42 Air (Gen1)</h1>
+            <p>試作品の放出 / 簡易ガイド</p>
+        </div>
+    </header>
+
+    <section class="container reveal">
+        <div class="eyebrow">Notice</div>
+        <h2>はじめに</h2>
+        <div class="panel">
+            <p>Gen1 は<b>完成品ではありません</b>。組み立てと、多くの部品の用意をご自身で行っていただく必要があります。キースイッチ42個とミニスイッチ4個の構成です。</p>
+            <p>個人的に作った試作品の放出につき、<b>積極的なサポートはしません</b>。自作キーボードに慣れている方向けです。動かない・組み立て方がわからない等があっても対応いたしかねますのでご了承ください。</p>
+            <p>現行の <a href="../Gen2/">Gen2</a> とは筐体が異なりますが、キーの配線・ファームウェアは共通です。</p>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="eyebrow">Parts</div>
+        <h2>同梱物と、用意していただくもの</h2>
+        <div class="panel">
+            <h4>同梱物</h4>
+            <ul>
+                <li>PCB（左右）</li>
+                <li>ボトムプレート</li>
+                <li>ケースデータ（プレート一体型・STEP）</li>
+            </ul>
+            <p>ケースは<b>データのみのお渡し</b>です。以下からダウンロードし、JLCPCB などに3Dプリントを発注してご用意ください。</p>
+            <ul>
+                <li><a href="case/su42aircase250110l.step">su42aircase250110l.step</a>（左手側）</li>
+                <li><a href="case/su42aircase250110r.step">su42aircase250110r.step</a>（右手側）</li>
+            </ul>
+            <p>外形は片側あたり 203 &times; 112 &times; 18.3 mm です。スイッチプレート一体型で、ボトムプレート（同梱）と M2 ネジ・六角ナットで固定します。</p>
+
+            <h4>各自で用意していただくもの</h4>
+            <ul>
+                <li>Seeed Studio XIAO nRF52840 &times;2</li>
+                <li>リチウムポリマーバッテリー &times;2 ／ 2ピンPHコネクタのポスト &times;2（バッテリー接続用）</li>
+                <li>スライドスイッチ &times;2（電源用。<a href="https://akizukidenshi.com/catalog/g/g115703/">秋月電子 SK-12D11VG3</a> など）</li>
+                <li>タクトスイッチ &times;4（ミニスイッチ用。<a href="https://akizukidenshi.com/catalog/g/g103647/">秋月電子 6&times;6mm</a> など）</li>
+                <li>リセットスイッチ用タクタイルスイッチ &times;2（<a href="https://shop.yushakobo.jp/collections/all/products/a0800ts-01-1">遊舎工房 2pin 3.5&times;6&times;4.3mm</a> など）</li>
+                <li>Kailh Choc v1 キースイッチ &times;42 ／ Choc v1 用ソケット &times;42</li>
+                <li>Choc v1 用キーキャップ &times;42</li>
+                <li>固定用の M2 ネジ ／ スリットに差し込む六角ナット</li>
+            </ul>
+            <p>バッテリーの充電は XIAO nRF52840 の充電機能をそのまま使用します。</p>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="eyebrow">Warning</div>
+        <h2>使用上の注意</h2>
+        <div class="panel">
+            <p>液体をかけたり、高温になる場所に放置したり、強い力や衝撃を与えたりしないでください。接触不良やバッテリーの発火を起こす可能性があります。</p>
+            <p>直射日光に長期間当てないでください。高温を避ける意味でも、筐体を傷めないという意味でも。</p>
+            <p>日本国外で電源を入れないでください。違法電波になる可能性があるので。</p>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="eyebrow">Firmware</div>
+        <h2>ファームウェアの書き込み</h2>
+        <div class="panel">
+            <p>XIAO nRF52840 はご自身で用意していただくため、<b>ファームウェアの書き込みもご自身で行っていただきます。</b></p>
+            <p>ファームウェアは Gen2 と共通のものが使えます。以下のリポジトリで GitHub Actions によりビルドされます。</p>
+            <p><a href="https://github.com/mina-root/Shin-Uchi42Air_ZMK-config">Shin-Uchi42Air_ZMK-config</a></p>
+            <p>Actions タブから最新のビルド成果物（Artifacts）をダウンロードし、解凍すると以下の2ファイルが得られます。</p>
+            <ul>
+                <li><code>shin_uchi42_air_left-seeeduino_xiao_ble-zmk.uf2</code>（左手＝親機）</li>
+                <li><code>shin_uchi42_air_right-seeeduino_xiao_ble-zmk.uf2</code>（右手＝子機）</li>
+            </ul>
+            <p>XIAO をUSBで接続し、リセットボタンを<b>素早く2回</b>押すと <code>XIAO-SENSE</code> ドライブが現れます。そこへ対応する <code>.uf2</code> をコピーしてください。左右それぞれに行います。</p>
+            <p>初回は左右を近づけて数秒〜十数秒待つと、BLEペアリングが完了して左右が同期します。</p>
+        </div>
+    </section>
+
+    <section class="container reveal" id="keymap">
+        <div class="eyebrow">Default Keymap</div>
+        <h2>デフォルトキーマップ</h2>
+        <div class="panel">
+            <p><a href="https://o24.works/layout/">大西配列</a>を採用しています。<b>QWERTY配列ではありません</b>のでご注意ください。</p>
+            <p>中央の文字が通常入力、下部の文字は長押しで入力されます。英数キー長押しで記号数字レイヤー、かなキー長押しで操作系レイヤーが有効になります。</p>
+            <p>Shiftは、どちらの手でも人差し指か中指のホームポジションのキーを長押しすることで入力されます。</p>
+            <img src="../../../images/keymap.svg" alt="デフォルトキーマップ" />
+            <p>TABは左手側の中央行の右2つのキーを同時押しすることで入力できます。</p>
+            <img src="../../../images/keymap_combo.svg" alt="コンボ入力" />
+            <p>Bluetoothプロファイルの切り替えレイヤーは、右手側の左のミニボタンを押している間有効化されます。</p>
+            <img src="../../../images/keymap_bt.svg" alt="Bluetoothプロファイル切り替えレイヤー" />
+            <p>キーマップの書き換え方は上記リポジトリを参照してください。QWERTY配列にすることもできます。</p>
+        </div>
+    </section>
+
+    <section class="container reveal">
+        <div class="eyebrow">Support</div>
+        <h2>困ったときは</h2>
+        <div class="panel">
+            <p>前述のとおり積極的なサポートはしませんが、よくある症状だけ挙げておきます。</p>
+            <ul>
+                <li>記号が違うよ？ → PC側の入力方式が日本語配列になっているなら <b>ANSI（US配列）</b> に変更してください。</li>
+                <li>左右がつながらない？ → 左右を近づけて再起動し、ペアリングし直してください。左が親機、右が子機で、子機は単体では動作しません。</li>
+                <li>キーが無反応 → はんだ付けを確認してください。ハード的な不良の場合は <a href="https://x.com/mina_VRCh">ミナモト@mina_VRCh</a> まで。</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">Designed by Minamoto © 2025 真打42 Project</div>
+    </footer>
+    <script>
+        const io = new IntersectionObserver((es) => {
+            es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(n => io.observe(n));
+    </script>
+</body>
+
+</html>
